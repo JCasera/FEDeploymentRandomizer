@@ -1,0 +1,5 @@
+# Godot 4+ specific ignores
+.godot/
+FE-Engage-Sprites/*
+lock.png
+lock.png.import

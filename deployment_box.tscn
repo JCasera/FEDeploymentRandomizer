@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bi708i7o57ay1"]
+
+[node name="DeploymentBox" type="Control"]
+custom_minimum_size = Vector2(1000, 250)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="FrontRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -20.0
+offset_top = -16.0
+offset_right = 980.0
+offset_bottom = 234.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = -25
+
+[node name="BackRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 65.0
+offset_top = 52.0
+offset_right = 1065.0
+offset_bottom = 302.0
+theme_override_constants/separation = -25

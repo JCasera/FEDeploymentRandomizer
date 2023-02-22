@@ -1,0 +1,154 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8rhj3aaqej1h"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ayjt1"]
+[ext_resource type="PackedScene" uid="uid://b0ts7w61fyqm8" path="res://unit_display.tscn" id="2_oemqs"]
+[ext_resource type="Script" path="res://UnitSelect.gd" id="3_6pp31"]
+
+[node name="Main" type="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_ayjt1")
+
+[node name="DeploymentGrid" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = -50
+theme_override_constants/v_separation = -50
+columns = 7
+
+[node name="UnitDisplay" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay2" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay3" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay4" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay5" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay6" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay7" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay8" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay9" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay10" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay11" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay12" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay13" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="UnitDisplay14" parent="DeploymentGrid" instance=ExtResource("2_oemqs")]
+layout_mode = 2
+
+[node name="Menu" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Menu"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Randomize" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Randomize"
+
+[node name="VSeparator2" type="VSeparator" parent="Menu"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="ClearAll" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Clear All
+"
+
+[node name="VSeparator3" type="VSeparator" parent="Menu"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 2
+text = "Deployable Unit Count"
+
+[node name="UnitCount" type="SpinBox" parent="Menu"]
+layout_mode = 2
+min_value = 1.0
+max_value = 14.0
+value = 1.0
+
+[node name="VSeparator4" type="VSeparator" parent="Menu"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="SetAvailableUnits" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Set Available Units"
+
+[node name="TransparentBG" type="CheckButton" parent="Menu"]
+layout_mode = 2
+text = "Transparent Background"
+
+[node name="UnitToggles" type="PopupPanel" parent="."]
+
+[node name="VBox" type="VBoxContainer" parent="UnitToggles"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="Grid" type="GridContainer" parent="UnitToggles/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="Close" type="Button" parent="UnitToggles/VBox"]
+layout_mode = 2
+text = "Close"
+
+[node name="UnitSelect" type="PopupPanel" parent="."]
+script = ExtResource("3_6pp31")
+
+[node name="VBox" type="VBoxContainer" parent="UnitSelect"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 150.0
+offset_bottom = 96.0
+
+[node name="UnitPreview" type="TextureRect" parent="UnitSelect/VBox"]
+layout_mode = 2
+
+[node name="UnitSelector" type="OptionButton" parent="UnitSelect/VBox"]
+layout_mode = 2
+
+[node name="ClassSelector" type="OptionButton" parent="UnitSelect/VBox"]
+layout_mode = 2
+
+[node name="ConfirmBtn" type="Button" parent="UnitSelect/VBox"]
+layout_mode = 2
+text = "Confirm Selection"
