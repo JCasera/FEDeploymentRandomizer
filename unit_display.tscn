@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0ts7w61fyqm8"]
 
 [ext_resource type="Script" path="res://unit_display.gd" id="1_puw7o"]
-[ext_resource type="Texture2D" uid="uid://dis10kojfwnm6" path="res://FE-Engage-Sprites/Alear.png" id="2_1rgfs"]
+[ext_resource type="Texture2D" uid="uid://dis10kojfwnm6" path="res://Images/EngageSprites/Alear.png" id="2_y5ovq"]
 [ext_resource type="Texture2D" uid="uid://cm8vsljtrti2i" path="res://Images/lock.png" id="3_5kwoi"]
 
 [node name="UnitDisplay" type="MarginContainer"]
@@ -33,7 +33,7 @@ stretch_mode = 5
 [node name="Sprite" type="TextureRect" parent="Info/Images"]
 layout_mode = 2
 mouse_filter = 0
-texture = ExtResource("2_1rgfs")
+texture = ExtResource("2_y5ovq")
 stretch_mode = 5
 
 [node name="Locked" type="TextureRect" parent="Info/Images"]

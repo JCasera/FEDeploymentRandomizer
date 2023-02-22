@@ -23,12 +23,14 @@ var available_unit_count = 0
 var row_max = 7
 var current_deployment = []
 
+const default_unit = "Alear.png.import"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in DirAccess.get_files_at("res://FE-Engage-Sprites"):
-		if i == "Alear.png":
+	for i in DirAccess.get_files_at("res://Images/EngageSprites"):
+		if i == default_unit:
 			continue
-		if i.ends_with(".png"):
+		if i.ends_with(".import"):
 			unit_list[i] = true
 			add_unit_to_availability_toggle(i)
 			available_unit_count += 1
@@ -39,7 +41,7 @@ func _ready():
 		slot.select_unit_to_display.connect(customize_unit)
 		slot.index = u
 		slot.clear_unit()
-	deployment_grid.get_child(0).set_unit("Alear.png")
+	deployment_grid.get_child(0).set_unit(default_unit)
 	deployment_grid.get_child(0).unit_class.text = ""
 	deployment_grid.get_child(0).toggle_locked_status()
 
@@ -58,7 +60,7 @@ func select_units():
 	current_deployment = []
 	var max_units = min(deployment_count.value, available_unit_count)
 	for j in max_units:
-		var unit = "Alear.png"
+		var unit = default_unit
 		
 		if deployment_grid.get_child(j).locked:
 			continue
@@ -97,6 +99,8 @@ func clear_units() -> void:
 func add_unit_to_availability_toggle(unit_name : String) -> void:
 	var row = toggle_row.instantiate()
 	unit_toggle_grid.add_child(row)
+	if unit_name.ends_with(".import"):
+		unit_name = unit_name.get_basename()
 	row.unit_name.text = unit_name.get_basename()
 	row.toggle.button_pressed = true
 	row.toggle.toggled.connect(update_unit_availaibity.bind(unit_name))

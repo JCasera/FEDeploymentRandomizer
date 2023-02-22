@@ -17,8 +17,10 @@ func get_unit() -> String:
 	return unit_label.text
 
 func set_unit(unit_name : String) -> void:
+	if unit_name.ends_with(".import"):
+		unit_name = unit_name.get_basename()
 	unit_label.text = unit_name.get_basename()
-	sprite.texture = ResourceLoader.load("res://FE-Engage-Sprites/" + unit_name)
+	sprite.texture = ResourceLoader.load("res://Images/EngageSprites/" + unit_name)
 
 func set_unit_class(unit_class_name : String) -> void:
 	unit_class.text = unit_class_name
